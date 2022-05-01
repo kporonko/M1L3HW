@@ -33,6 +33,40 @@ namespace M1L3HW
                 startArr[i] = new Random().Next(1,26);
             }
 
+            // Learn how many odd and even nums we have and then create two arrays - one with odd numbers, second - with even.
+            int oddCount = 0;
+            int evenCount = 0;
+
+            for (int i = 0; i < startArr.Length; i++)
+            {
+                if(startArr[i] % 2 == 0)
+                {
+                    evenCount++;
+                }
+                else
+                {
+                    oddCount++;
+                }
+            }
+
+            int[] oddArray = new int[oddCount];
+            int[] evenArray = new int[evenCount];
+
+            int evenIndex = 0;
+            int oddIndex = 0;
+            for (int i = 0; i < startArr.Length; i++)
+            {
+                if(startArr[i] % 2 == 0)
+                {
+                    evenArray[evenIndex] = startArr[i];
+                    evenIndex++;
+                }
+                else
+                {
+                    oddArray[oddIndex] = startArr[i];
+                    oddIndex++;
+                }
+            }
 
             Console.ReadKey();
         }
