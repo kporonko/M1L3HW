@@ -4,6 +4,8 @@ namespace M1L3HW
 {
     internal class Program
     {
+        static string alphabet = "abcdefghijklmnopqrstuvwxyz";
+        static string lettersToUpper = "aeidhj";
         static void Main(string[] args)
         {
             Console.WriteLine("Add an array length");
@@ -65,6 +67,28 @@ namespace M1L3HW
                 {
                     oddArray[oddIndex] = startArr[i];
                     oddIndex++;
+                }
+            }
+
+            // Create two char arrays with numbers swapped with alphabet letters.
+            char[] oddLetters = new char[oddArray.Length];
+            char[] evenLetters = new char[evenArray.Length];
+
+            for (int i = 0; i < oddArray.Length; i++)
+            {
+                oddLetters[i] = alphabet[oddArray[i] - 1];
+                if (lettersToUpper.Contains(oddLetters[i]))
+                {
+                    oddLetters[i] = Convert.ToChar(oddLetters[i].ToString().ToUpper());
+                }
+            }
+
+            for (int i = 0; i < evenArray.Length; i++)
+            {
+                evenLetters[i] = alphabet[evenArray[i] - 1];
+                if (lettersToUpper.Contains(evenLetters[i]))
+                {
+                    evenLetters[i] = Convert.ToChar(evenLetters[i].ToString().ToUpper());
                 }
             }
 
