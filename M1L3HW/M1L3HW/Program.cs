@@ -92,6 +92,33 @@ namespace M1L3HW
                 }
             }
 
+            // Print the arrays and print the most big-lettered array`s name.
+            int oddUpper = 0;
+            int evenUpper = 0;
+
+            string arrToPrintOdd = "";
+            string arrToPrintEven = "";
+            for (int i = 0; i < oddLetters.Length; i++)
+            {
+                if (oddLetters[i].ToString().ToUpper() == oddLetters[i].ToString())
+                {
+                    oddUpper++;
+                }
+                arrToPrintOdd += oddLetters[i].ToString() + " ";
+            }
+            for (int i = 0; i < evenLetters.Length; i++)
+            {
+                if (evenLetters[i].ToString().ToUpper() == evenLetters[i].ToString())
+                {
+                    evenUpper++;
+                }
+                arrToPrintEven += evenLetters[i].ToString() + " ";
+            }
+            Console.WriteLine($"The odd lettered array:\n{arrToPrintOdd}\n");
+            Console.WriteLine($"The even-lettered array:\n{arrToPrintEven}\n");
+            string nameOfMostCountOfUpperLetters = evenUpper > oddUpper ? $"The even-lettered array has more upper case letters: {evenUpper} vs {oddUpper}" :
+                                                   evenUpper == oddUpper ? $"The arrays have the same number of upper case words: {evenUpper}" : $"The odd-lettered array has more upper case letters: {oddUpper} vs {evenUpper}";
+            Console.WriteLine(nameOfMostCountOfUpperLetters);
             Console.ReadKey();
         }
     }
